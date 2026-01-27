@@ -1,0 +1,1100 @@
+/* =====================================================
+   GLOBAL RESET
+   Removes default browser spacing issues
+   ===================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* ===== Accessibility focus styles ===== */
+a:focus,button:focus{
+  outline: 2px dashed #ffffff;
+  outline-offset: 4px;
+}
+
+/* =====================================================
+   GLOBAL THEME VARIABLES (TEAM STANDARD)
+   Change color here → whole site updates
+   ===================================================== */
+:root {
+  --primary-color: #C97A3D;   /* exact image primary */
+  --primary-dark: #8B4A1F;    /* depth / footer */
+  --text-light: #ffffff;
+  --text-muted: #e7d9cc;
+    --light-bg: #f9f9f9;
+    /* Premium neutrals */
+  --bg-main: #f6f7f9;        /* page background */
+  --bg-section: #fbfbfc;     /* section background */
+  --bg-card: #ffffff;       /* cards only */
+
+  --text-dark: #222222;
+  --text-muted: #666666;
+}
+
+/* =====================================================
+   BODY BASE STYLE
+   ===================================================== */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+/* ===== Micro animations ===== */
+.nav-links a{
+  transition: color 0.2s ease;
+}
+
+.footer-box a{
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.footer-box a:hover{
+  opacity: 0.85;
+}
+
+/* ================= PREMIUM NAVBAR ================= */
+.navbar{
+  background: linear-gradient(90deg, var(--primary-dark), var(--primary-color));
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  /* soft elevation – not a dark box */
+  box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+}
+
+.nav-container{
+  max-width: 1200px;
+  margin: auto;
+  padding: 16px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo{
+  color: var(--text-light);
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: .3px;
+}
+
+.nav-links{
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.nav-links a{
+  color: var(--text-light);
+  text-decoration: none;
+  font-size: 14px;
+  position: relative;
+}
+
+.navbar.scrolled{
+  background: linear-gradient(90deg, #7a3f1e, var(--primary-color));
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  transition: all 0.3s ease;
+}
+/* subtle underline like image */
+.nav-links a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-6px;
+  width:0;
+  height:2px;
+  background:#fff;
+  transition:.25s;
+}
+.nav-links a:hover::after{ width:100%; }
+
+/* login pill */
+.nav-login{
+  padding: 8px 18px;
+  border-radius: 22px;
+  border: 1px solid rgba(255,255,255,.6);
+  background: rgba(255,255,255,.18);
+}
+.nav-links a:focus {
+  outline: none;
+}
+
+/* mobile */
+.menu-icon{ display:none; color:#fff; font-size:26px; cursor:pointer; }
+
+@media(max-width:768px){
+  .menu-icon{ display:block; }
+  .nav-links{
+    position:absolute;
+    top:64px; left:0; width:100%;
+    background: linear-gradient(180deg, var(--primary-dark), var(--primary-color));
+    flex-direction:column;
+    display:none;
+  }
+  .nav-links.active{ display:flex; }
+  .nav-links a{ padding:14px 0; }
+}
+/* =====================================================
+   HERO SECTION (MAIN SEARCH AREA)
+   ===================================================== */
+.hero {
+  min-height: 70vh;
+  background: 
+    linear-gradient(rgba(0,0,0,0.35), rgba(0,0,0,0.35)),
+    url("images/tea-estate.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 80px 70px;
+  color: #ffffff;
+}
+
+.hero h1 {
+  
+  font-size: 42px;
+  max-width: 720px;
+  line-height: 1.2;
+  margin-bottom: 14px;
+}
+
+.hero p {
+  color: var(--text-dark);
+  font-size: 17px;
+  max-width: 520px;
+  margin-bottom: 28px;
+  color: #f3e7db;
+}
+
+
+.hero h1,
+.hero p,
+.search-box,
+.search-hints {
+  animation: heroRise 0.7s ease-out both;
+}
+
+.hero p { animation-delay: 0.1s; }
+.search-box { animation-delay: 0.2s; }
+.search-hints { animation-delay: 0.3s; }
+
+@keyframes heroRise {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.search-box {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.search-box input {
+  width: 320px;
+  padding: 14px 16px;
+  font-size: 15px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+}
+
+.search-box button {
+  padding: 14px 26px;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  font-size: 15px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.search-box button:hover {
+  background-color: var(--primary-dark);
+}
+
+
+
+/* ===== Strong & clean search suggestions ===== */
+
+.search-hints {
+  margin-top: 18px;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 3;
+}
+
+/* "Try:" label */
+.hint-label {
+  margin-right: 8px;
+  color: #ffffff;
+  font-weight: 600;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.85);
+}
+
+/* Clickable hint */
+.hint {
+  cursor: pointer;
+  color: #ffffff;
+  font-weight: 600;
+
+  background: rgba(0,0,0,0.22); /* makes text BRIGHT */
+  padding: 6px 14px;
+  border-radius: 18px;
+
+  margin: 4px 0;
+
+  text-shadow: 0 1px 4px rgba(0,0,0,0.85);
+  transition: all 0.2s ease;
+}
+
+.hint:hover {
+  background: var(--primary-color);
+  color: #ffffff;
+}
+
+/* Separator dot */
+.dot {
+  margin: 0 10px;
+  color: #ffffff;
+  opacity: 0.9;
+}
+
+
+
+
+/* =====================================================
+   FEATURES SECTION
+   ===================================================== */
+.features {
+    padding: 70px 60px;
+    background: linear-gradient(180deg, #fdf8f2, #ffffff);
+    background-color: var(--bg-section);
+    text-align: center;
+}
+
+/* Features heading */
+.features h2 {
+    color: var(--text-dark);
+    font-size: 30px;
+    margin-bottom: 40px;
+}
+
+/* Features grid */
+.features-box {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+/* Feature card */
+.feature-card {
+    background-color: #ffffff;
+    background: var(--bg-card);
+    padding: 30px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.feature-card i {
+    font-size: 34px;
+    color: var(--primary-color);
+    margin-bottom: 14px;
+    display: block;
+}
+
+.feature-card p {
+    color: var(--text-muted);
+    font-size: 16px;
+    font-weight: 500;
+   
+}
+
+
+.feature-card {
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(0,0,0,0.12);
+}
+
+
+.features-box {
+    max-width: 1100px;
+    margin: auto;
+}
+
+
+/* =====================================================
+   POPULAR TEA SHOPS SECTION
+   ===================================================== */
+/* ================= POPULAR TEA SHOPS ================= */
+
+.popular-shops {
+  padding: 80px 60px;
+  background: #faf8f5;
+  background-color: var(--bg-main);
+  text-align: center;
+}
+.popular-shops {
+  border-top: 1px solid #eee;
+}
+
+.popular-shops h2 {
+  font-size: 32px;
+  margin-bottom: 45px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* Cards grid */
+.shop-cards {
+  max-width: 1200px;
+  margin: auto;
+  background: var(--bg-card);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Individual card */
+.shop-card {
+  background: #ffffff;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: left;
+}
+
+/* Hover effect */
+.shop-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.15);
+}
+
+/* Card image */
+.shop-card img {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Card content */
+.shop-info {
+  padding: 18px 20px 22px;
+}
+
+.shop-info h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+  color: var(--text-dark);
+}
+
+.shop-info p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+/* Buttons container */
+.shop-actions {
+  display: flex;
+  gap: 12px;
+}
+
+/* View on Map button */
+.map-btn {
+  flex: 1;
+  padding: 10px 0;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.map-btn:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Book Now button */
+.book-btn {
+  flex: 1;
+  padding: 10px 0;
+  border-radius: 8px;
+  border: 1px solid var(--primary-color);
+  background: transparent;
+  color: var(--primary-color);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.book-btn:hover {
+  background: var(--primary-color);
+  color: #ffffff;
+}
+
+
+
+
+/* =====================================================
+   WHY CHOOSE US SECTION
+   ===================================================== */
+/* ================= WHY CHOOSE US ================= */
+
+.why-choose-us {
+  padding: 80px 60px;
+  background: linear-gradient(180deg, #fffaf6, #ffffff);
+  background: linear-gradient(
+    180deg,
+    var(--bg-section),
+    var(--bg-main)
+  );
+  text-align: center;
+}
+
+.why-choose-us h2 {
+  font-size: 32px;
+  margin-bottom: 50px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* Cards container */
+.reasons {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Individual card */
+.reason {
+  background: #ffffff;
+  background: var(--bg-card);
+  padding: 35px 28px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover effect */
+.reason:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.14);
+}
+
+/* Title */
+.reason h4 {
+  font-size: 18px;
+  margin-bottom: 12px;
+  color: var(--primary-color);
+}
+
+/* Description */
+.reason p {
+  font-size: 14px;
+  color: var(--text-muted);;
+  line-height: 1.6;
+}
+
+
+
+/* ================= FINAL PROFESSIONAL FOOTER ================= */
+
+.footer{
+  background: linear-gradient(
+    180deg,
+    #9b5b2e,
+    #5a2f17
+  );
+  color: #eaded3;
+  margin-top: 90px;
+}
+
+/* Footer layout */
+.footer-container{
+  max-width: 1200px;
+  margin: auto;
+  padding: 54px 22px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 36px;
+
+  /* Prevent click overlap bugs */
+  position: relative;
+}
+
+/* Footer column */
+.footer-box{
+  position: relative;
+  z-index: 1;
+}
+
+/* Headings */
+.footer-box h3,
+.footer-box h4{
+  color: #ffffff;
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+
+/* Normal text (NOT clickable) */
+.footer-box p{
+  font-size: 14px;
+  line-height: 1.6;
+  margin-bottom: 10px;
+  pointer-events: none;
+}
+
+/* Footer links (TEXT ONLY clickable) */
+.footer-box a{
+  font-size: 14px;
+  color: #eaded3;
+  text-decoration: none;
+  line-height: 1.8;
+}
+
+.footer-box a:hover{
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+/* ================= SOCIAL ICONS ================= */
+
+.social-icons{
+  display: flex;
+  gap: 14px;
+  margin-top: 8px;
+}
+
+/* Icon circle */
+.social-icons a{
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 2px solid #c97a3d;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  transition: all 0.25s ease;
+}
+
+/* Icon itself (FORCED COLOR FIX) */
+.social-icons a i{
+  font-size: 18px;
+  color: #c97a3d;
+}
+
+/* Hover */
+.social-icons a:hover{
+  background: #c97a3d;
+  transform: translateY(-3px);
+}
+
+.social-icons a:hover i{
+  color: #ffffff;
+}
+
+/* Remove dotted focus */
+.social-icons a:focus{
+  outline: none;
+}
+
+/* Footer bottom */
+.footer-bottom{
+  text-align: center;
+  padding: 18px;
+  font-size: 13px;
+  color: #e6d2c0;
+  border-top: 1px solid rgba(255,255,255,0.18);
+}
+/* ===== BRAND COLOR HOVER EFFECTS ===== */
+
+/* WhatsApp */
+.social.whatsapp:hover{
+  background: #25D366;       /* WhatsApp green */
+  border-color: #25D366;
+}
+.social.whatsapp:hover i{
+  color: #ffffff;
+}
+
+/* Instagram */
+.social.instagram:hover{
+  background: #E4405F;       /* Instagram pink */
+  border-color: #E4405F;
+}
+.social.instagram:hover i{
+  color: #ffffff;
+}
+
+/* Facebook */
+.social.facebook:hover{
+  background: #1877F2;       /* Facebook blue */
+  border-color: #1877F2;
+}
+.social.facebook:hover i{
+  color: #ffffff;
+}
+
+
+
+
+
+
+/* ================= SEARCH PAGE UI ================= */
+
+
+/* =====================================================
+   SEARCH PAGE HEADER
+   ===================================================== */
+.search-header {
+  padding: 70px 60px 40px;
+  background: linear-gradient(180deg, #fffaf6, #ffffff);
+  background: linear-gradient(180deg,#fdfaf7, var(--bg-main));
+  text-align: center;
+}
+
+.search-header h1,
+.search-header h2 {
+  font-size: 32px;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+
+.search-header p {
+  font-size: 15px;
+  color: var(--text-muted);
+}
+
+
+/* =====================================================
+   BACK BUTTON (CLEAN INLINE STYLE)
+   ===================================================== */
+.results-header {
+  max-width: 1100px;
+  margin: 20px auto 10px;
+  padding: 0 20px;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  padding: 0;
+}
+
+.back-btn:hover {
+  text-decoration: underline;
+}
+
+
+/* =====================================================
+   RESULTS GRID (LIST VIEW)
+   ===================================================== */
+#results {
+  max-width: 1100px;
+  margin: 40px auto 80px;
+  padding: 0 20px;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+
+/* =====================================================
+   RESULT CARD
+   ===================================================== */
+#results .shop-card {
+  background: #ffffff;
+  background: var(--bg-card);
+  padding: 26px 22px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#results .shop-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(0,0,0,0.14);
+}
+
+
+/* =====================================================
+   CARD TEXT
+   ===================================================== */
+#results .shop-card h3 {
+  font-size: 18px;
+  margin-bottom: 8px;
+  color: var(--text-dark);
+}
+
+#results .shop-card p {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+#results .shop-card b {
+  color: #444;
+}
+
+
+/* =====================================================
+   CARD BUTTON
+   ===================================================== */
+#results .shop-card button {
+  align-self: flex-start;
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.25s ease;
+}
+
+#results .shop-card button:hover {
+  background-color: var(--primary-dark);
+}
+
+
+/* =====================================================
+   DETAIL VIEW TITLE
+   ===================================================== */
+#results h2 {
+  margin-bottom: 14px;
+  color: var(--text-dark);
+}
+
+/* =====================================================
+   EMPTY STATE – NO RESULTS FOUND
+   ===================================================== */
+.empty-state {
+  grid-column: 1 / -1; /* full width inside grid */
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(180deg, #fffaf6, #ffffff);
+  border-radius: 18px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.empty-state i {
+  font-size: 54px;
+  color: var(--primary-color);
+  margin-bottom: 18px;
+}
+
+.empty-state h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+  color: var(--text-dark);
+}
+
+.empty-state p {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin-bottom: 22px;
+}
+
+.empty-state button {
+  padding: 12px 26px;
+  border-radius: 10px;
+  border: none;
+  background: var(--primary-color);
+  color: #ffffff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.25s ease;
+}
+
+.empty-state button:hover {
+  background: var(--primary-dark);
+}
+
+
+
+
+
+
+
+/* ===== SEARCH RESULT CARD ENHANCEMENTS ===== */
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.badge {
+  background: #e8f5e9;
+  color: #2e7d32;
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-weight: 500;
+}
+
+.card-location {
+  font-size: 14px;
+  color: #666;
+  margin: 10px 0;
+}
+
+.card-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.card-tags span {
+  background: #f3f3f3;
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  color: #444;
+}
+
+.details-btn {
+  padding: 10px 18px;
+  border-radius: 8px;
+  border: none;
+  background: var(--primary-color);
+  color: #fff;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.details-btn:hover {
+  background: var(--primary-dark);
+}
+
+
+.empty-chips {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.empty-chips span {
+  padding: 6px 14px;
+  border-radius: 16px;
+  background: #f1f1f1;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.empty-chips span:hover {
+  background: var(--primary-color);
+  color: #fff;
+}
+
+
+/* ================= LOADING ANIMATION ================= */
+
+.loader {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.loader p {
+  margin-top: 14px;
+  font-size: 15px;
+  color: #666;
+}
+
+.spinner {
+  width: 46px;
+  height: 46px;
+  border: 4px solid #eee;
+  border-top: 4px solid var(--primary-color);
+  border-radius: 50%;
+  margin: auto;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* ================= PAGE FADE-IN ================= */
+
+body {
+  animation: pageFade 0.6s ease-out;
+}
+
+@keyframes pageFade {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= SEARCH RESULT FADE ================= */
+
+#results .shop-card {
+  animation: resultFade 0.4s ease forwards;
+}
+
+@keyframes resultFade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+
+
+
+/* =====================================================
+   RESPONSIVE — TABLET & MOBILE
+   ===================================================== */
+@media (max-width: 768px) {
+
+  /* Navbar */
+  .navbar {
+    padding: 14px 18px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 55vh;
+    padding: 60px 16px;
+    align-items: center;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 15px;
+  }
+
+  /* Search box */
+  .search-box {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .search-box input {
+    width: 100%;
+  }
+
+  /* Sections spacing */
+  .features,
+  .popular-shops,
+  .why-choose-us {
+    padding: 50px 20px;
+  }
+
+  /* Grids → single column */
+  .features-box,
+  .shop-cards,
+  .reasons,
+  #results {
+    grid-template-columns: 1fr;
+  }
+
+  /* Search header */
+  .search-header {
+    padding: 60px 20px 30px;
+  }
+}
+
+
+/* =====================================================
+   RESPONSIVE — SMALL MOBILE
+   ===================================================== */
+@media (max-width: 480px) {
+
+  .hero h1 {
+    font-size: 24px;
+  }
+
+  .search-box button {
+    width: 100%;
+  }
+
+  .hint {
+    font-size: 13px;
+    padding: 5px 12px;
+  }
+
+  .shop-card img {
+    height: 170px;
+  }
+
+  .shop-actions {
+    flex-direction: column;
+  }
+}

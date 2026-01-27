@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tea Shop Results</title>
+  <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+  <header class="search-header">
+  <h1>Tea Shops Near You</h1>
+  <p>Showing results based on your search</p>
+</header>
+
+
+  <!-- Back to Home -->
+<div class="results-header">
+  <button onclick="history.back()" class="back-btn">
+    ← Back to results
+  </button>
+</div>
+
+
+  <!-- Results appear here -->
+  <section id="results">
+  <div id="loader" class="loader hidden">
+    <div class="spinner"></div>
+    <p>Finding nearby tea shops...</p>
+  </div>
+</section>
+
+
+  <script src="script-common.js"></script>
+  <script src="search-page.js"></script>
+
+  
+
+</body>
+</html>

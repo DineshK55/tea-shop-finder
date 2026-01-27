@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tea Shop Finder</title>
+
+   <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+<!-- ================= NAVBAR ================= -->
+<header class="navbar">
+  <div class="nav-container">
+    <div class="logo">Tea Shop Finder</div>
+
+    <nav class="nav-links" id="navLinks">
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="packages.html">Packages</a>
+      <a href="reviews.html">Reviews</a>
+      <a href="careers.html">Job Careers</a>
+      <a href="contact.html">Contact</a>
+      <a href="login.html" class="nav-login">Login</a>
+    </nav>
+
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+  </div>
+</header>
+
+
+<!-- ================= HERO SECTION ================= -->
+<section class="hero">
+
+    <h1>Find the Best Tea Shops Near You</h1>
+    <p>Discover nearby tea shops and get directions instantly</p>
+
+    <!-- Search container -->
+    <div class="search-box">
+
+        <!-- Location / shop search -->
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Eg: Tea shop near me or Erode">
+
+        <!-- Search button -->
+        <button onclick="searchTeaShop()">Search Tea Shops</button>
+        
+
+    </div>
+    <!-- Search hints -->
+<div class="search-hints">
+  <span class="hint-label">Try:</span>
+
+
+  <span class="hint" onclick="quickSearch('Masala Tea')">Masala Tea</span>
+  <span class="dot">•</span>
+
+  <span class="hint" onclick="quickSearch('Samosa')">Samosa</span>
+  <span class="dot">•</span>
+
+  <span class="hint" onclick="quickSearch('Near Me')">Search by place</span>
+</div>
+
+
+
+</section>
+
+
+<section id="results"></section>
+
+
+<!-- =============== END HERO SECTION =============== -->
+
+
+<!-- ================= FEATURES SECTION ================= -->
+<section class="features">
+
+    <h2>Our Features</h2>
+
+    <div class="features-box">
+
+  <div class="feature-card">
+    <i class="fa-solid fa-location-dot"></i>
+    <p>Location Based Search</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa-solid fa-map-location-dot"></i>
+    <p>Google Map View</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa-solid fa-bolt"></i>
+    <p>Quick Results</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa-solid fa-face-smile"></i>
+    <p>User Friendly Design</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa-solid fa-mobile-screen"></i>
+    <p>Mobile Responsive</p>
+  </div>
+
+  <div class="feature-card">
+    <i class="fa-solid fa-shield"></i>
+    <p>Trusted Tea Shops</p>
+  </div>
+
+    </div>
+
+</section>
+<!-- =============== END FEATURES SECTION =============== -->
+
+
+<!-- ================= POPULAR TEA SHOPS ================= -->
+<!-- Cards + images will be added later -->
+<section class="popular-shops">
+
+  <h2>Popular Tea Shops</h2>
+
+  <div class="shop-cards">
+
+    <!-- Card 1 -->
+    <div class="shop-card">
+      <img src="images/tea-1.jpg" alt="Royal Tea - Erode">
+
+      <div class="shop-info">
+        <h3>Royal Tea</h3>
+        <p>Erode • Open now</p>
+
+        <div class="shop-actions">
+          <button class="map-btn">View on Map</button>
+          <button class="book-btn">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 2 -->
+    <div class="shop-card">
+      <img src="images/tea-2.jpg" alt="Chai Kings - Anthiyur">
+
+      <div class="shop-info">
+        <h3>Chai Kings</h3>
+        <p>Anthiyur • Open now</p>
+
+        <div class="shop-actions">
+          <button class="map-btn">View on Map</button>
+          <button class="book-btn">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Card 3 -->
+    <div class="shop-card">
+      <img src="images/tea-3.jpg" alt="Green Leaf Tea - Coimbatore">
+     <div class="shop-info">
+        <h3>Green Leaf Tea</h3>
+        <p>Coimbatore • Open now</p>
+
+        <div class="shop-actions">
+          <button class="map-btn">View on Map</button>
+          <button class="book-btn">Book Now</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</section>
+<!-- =============== END POPULAR TEA SHOPS =============== -->
+
+
+<!-- ================= WHY CHOOSE US ================= -->
+<section class="why-choose-us">
+
+    <h2>Why Choose Us</h2>
+
+    <div class="reasons">
+
+        <div class="reason">
+            <h4>Easy Search</h4>
+            <p>Find tea shops quickly near your location</p>
+        </div>
+
+        <div class="reason">
+            <h4>Verified Tea Shops</h4>
+            <p>Only trusted and popular tea shops</p>
+        </div>
+
+        <div class="reason">
+            <h4>Easy Navigation</h4>
+            <p>Get directions instantly using Google Maps</p>
+        </div>
+
+    </div>
+
+</section>
+<!-- ================= FOOTER ================= -->
+<footer class="footer">
+  <div class="footer-container">
+
+    <!-- Brand -->
+    <div class="footer-box">
+      <h3>Tea Shop Finder</h3>
+      <p>Discover the best tea shops near you with instant directions.</p>
+    </div>
+
+    <!-- Quick Links -->
+    <div class="footer-box">
+      <h4>Quick Links</h4>
+      <a href="#home">Home</a><br>
+      <a href="#about">About</a><br>
+      <a href="#packages">Packages</a><br>
+      <a href="#reviews">Reviews</a>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-box">
+      <h4>Contact</h4>
+      <p>Email: support@teashopfinder.com</p>
+      <p>Location: Tamil Nadu</p>
+    </div>
+
+    <!-- Social Media -->
+    <div class="footer-box">
+      <h4>Follow Us</h4>
+      <div class="social-icons">
+
+        <a href="https://wa.me/919876543210" target="_blank"  class="social whatsapp" aria-label="WhatsApp">
+          <i class="fa-brands fa-whatsapp"></i>
+        </a>
+
+        <a href="https://instagram.com" target="_blank" class="social instagram" aria-label="Instagram">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+
+        <a href="https://facebook.com" target="_blank" class="social facebook" aria-label="Facebook">
+          <i class="fa-brands fa-facebook-f"></i>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Tea Shop Finder. All rights reserved.
+  </div>
+</footer>
+<!-- =============== END FOOTER =============== -->
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<!-- has search input -->
+
+
+<script src="script-common.js"></script>
+
+<script>
+/* =========================================
+   HOME PAGE SEARCH FUNCTION
+   ========================================= */
+function searchTeaShop() {
+  var input = document.getElementById("searchInput");
+
+  if (!input || input.value.trim() === "") {
+    alert("Please enter tea, snack, shop name or place");
+    return;
+  }
+
+  var query = input.value.trim();
+
+  // Redirect to results page with query
+  window.location.href =
+    "search.html?q=" + encodeURIComponent(query);
+}
+</script>
+
+
+
+
+</body>
+</html>
