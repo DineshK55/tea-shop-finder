@@ -100,7 +100,7 @@ Testing and integration
 
 **Clone the repository**
 
-git clone https://github.com/your-username/tea-shop.git
+git clone https://github.com/nather24/Tea-Shop.git
 
 
 Open the project folder
