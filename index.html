@@ -36,18 +36,21 @@
 
 <!-- ================= HERO SECTION ================= -->
 <section class="hero">
+   <div class="hero-content">
 
     <h1>Find the Best Tea Shops Near You</h1>
-    <p>Discover nearby tea shops and get directions instantly</p>
+    <p>Search tea shops, explore job opportunities, and choose the best tea packages — all in one place.</p>
+
 
     <!-- Search container -->
     <div class="search-box">
 
+      <!--<p class="hero-meta">🔍 Search • 💼 Apply for Jobs • 📦 Subscribe to Tea Packages</p>-->
+
+
+
         <!-- Location / shop search -->
-        <input
-            type="text"
-            id="searchInput"
-            placeholder="Eg: Tea shop near me or Erode">
+        <input type="text"id="searchInput"placeholder="Eg: Tea shop near me or by tea">
 
         <!-- Search button -->
         <button onclick="searchTeaShop()">Search Tea Shops</button>
@@ -69,7 +72,7 @@
 </div>
 
 
-
+</div>
 </section>
 
 
@@ -82,41 +85,38 @@
 <!-- ================= FEATURES SECTION ================= -->
 <section class="features">
 
-    <h2>Our Features</h2>
+    <h2>What You Can Do With Tea Shop Finder</h2>
 
-    <div class="features-box">
 
+   <div class="features-box">
+
+  <!-- Search Feature -->
   <div class="feature-card">
     <i class="fa-solid fa-location-dot"></i>
-    <p>Location Based Search</p>
+    <p><b>Find Nearby Tea Shops</b></p>
+    <small>Search tea shops by place, tea or snacks</small>
   </div>
 
+  <!-- Job Careers Feature -->
   <div class="feature-card">
-    <i class="fa-solid fa-map-location-dot"></i>
-    <p>Google Map View</p>
+    <i class="fa-solid fa-briefcase"></i>
+    <p><b>Job Careers</b></p>
+    <small>Find tea shop jobs and apply easily</small>
+    <br><br>
+    <a href="careers.html" class="feature-link">Explore Careers </a>
   </div>
 
+  <!-- Packages Feature -->
   <div class="feature-card">
-    <i class="fa-solid fa-bolt"></i>
-    <p>Quick Results</p>
+    <i class="fa-solid fa-box"></i>
+    <p><b>Tea Packages</b></p>
+    <small>Monthly, weekly & office subscriptions</small>
+    <br><br>
+    <a href="packages.html" class="feature-link">View Packages </a>
   </div>
 
-  <div class="feature-card">
-    <i class="fa-solid fa-face-smile"></i>
-    <p>User Friendly Design</p>
-  </div>
+</div>
 
-  <div class="feature-card">
-    <i class="fa-solid fa-mobile-screen"></i>
-    <p>Mobile Responsive</p>
-  </div>
-
-  <div class="feature-card">
-    <i class="fa-solid fa-shield"></i>
-    <p>Trusted Tea Shops</p>
-  </div>
-
-    </div>
 
 </section>
 <!-- =============== END FEATURES SECTION =============== -->
@@ -126,7 +126,10 @@
 <!-- Cards + images will be added later -->
 <section class="popular-shops">
 
-  <h2>Popular Tea Shops</h2>
+  <h2>Popular Tea Shops Near You</h2>
+
+<p style="margin-bottom:30px; color:#666;">
+Explore some of the most loved tea spots based on location and popularity. </p>
 
   <div class="shop-cards">
 
@@ -212,7 +215,7 @@
     <!-- Brand -->
     <div class="footer-box">
       <h3>Tea Shop Finder</h3>
-      <p>Discover the best tea shops near you with instant directions.</p>
+      <p>Tea Shop Finder is a platform to discover tea shops, explore job careers,and subscribe to flexible tea packages.</p>
     </div>
 
     <!-- Quick Links -->

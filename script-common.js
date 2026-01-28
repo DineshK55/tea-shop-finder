@@ -3,8 +3,7 @@ function toggleMenu(){
   document.getElementById("navLinks").classList.toggle("active");
 }
 
-
-// ===== Navbar scroll effect ===== 
+/* Navbar scroll effect */
 window.addEventListener("scroll", function () {
   var navbar = document.querySelector(".navbar");
 
@@ -15,15 +14,7 @@ window.addEventListener("scroll", function () {
   }
 });
 
-
-function toggleMenu(){
-  document.getElementById("navLinks").classList.toggle("active");
-}
-
-// Redirect user to search page with query
+/* Quick search redirect */
 function quickSearch(text) {
-  window.location.href =
-    "search.html?q=" + encodeURIComponent(text);
+  window.location.href = "search.html?q=" + encodeURIComponent(text);
 }
-
-
