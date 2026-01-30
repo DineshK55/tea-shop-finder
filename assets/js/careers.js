@@ -1,4 +1,4 @@
-<script>
+
 function filterJobs() {
   const area = document.getElementById("area").value;
   const type = document.getElementById("jobType").value;
@@ -11,4 +11,3 @@ function filterJobs() {
     job.style.display = (matchArea && matchType) ? "block" : "none";
   });
 }
-</script>
