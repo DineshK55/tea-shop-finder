@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+git add index.html search.html<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -39,3 +39,49 @@
 
 </body>
 </html>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Tea Shop Results</title>
+  <link rel="stylesheet" href="assets/css/index.css">
+</head>
+<body>
+
+  <header class="search-header">
+  <h1>Tea Shops Near You</h1>
+  <p id="resultTitle">Showing results based on your search</p>
+</header>
+
+
+  <!-- Back to Home (only for list page) -->
+<div class="results-header" id="backToHome" style="display:none;">
+  <button onclick="goHome()" class="back-btn">
+    ← Back to Home
+  </button>
+</div>
+
+
+
+  <!-- Results appear here -->
+  <section id="results">
+  <div id="loader" class="loader hidden">
+    <div class="spinner"></div>
+    <p>Finding nearby tea shops...</p>
+  </div>
+</section>
+
+
+  <script src="assets/js/common.js"></script>
+  <script src="assets/js/search-page.js"></script>
+
+  
+
+</body>
+</html>
+
+
+>>>>>>> 0b4b912845c65f8273bb30356d7b314001835c1d
