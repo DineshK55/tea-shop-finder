@@ -1,32 +1,32 @@
 /* TOGGLE */
-const retail = document.getElementById("retailSection");
-const corporate = document.getElementById("monthlySection");
-const rBtn = document.getElementById("retailBtn");
-const cBtn = document.getElementById("packageBtn");
+const retail = document.getElementById("retailSection")
+const corporate = document.getElementById("monthlySection")
+const rBtn = document.getElementById("retailBtn")
+const cBtn = document.getElementById("packageBtn")
 var closepop=document.getElementById("close-pop")
 function switchMode(mode){
   
 
   if(mode === "retail"){
-    retail.classList.remove("hidden");
-    corporate.classList.add("hidden");
+    retail.classList.remove("hidden")
+    corporate.classList.add("hidden")
 
-    rBtn.classList.add("bg-green-700","text-white");
-    rBtn.classList.remove("bg-gray-200");
+    rBtn.classList.add("bg-green-700","text-white")
+    rBtn.classList.remove("bg-gray-200")
 
-    cBtn.classList.add("bg-gray-200");
-    cBtn.classList.remove("bg-green-700","text-white");
+    cBtn.classList.add("bg-gray-200")
+    cBtn.classList.remove("bg-green-700","text-white")
   } else {
-    corporate.classList.remove("hidden");
-    retail.classList.add("hidden");
+    corporate.classList.remove("hidden")
+    retail.classList.add("hidden")
 
-    cBtn.classList.add("bg-green-700","text-white");
-    cBtn.classList.remove("bg-gray-200");
+    cBtn.classList.add("bg-green-700","text-white")
+    cBtn.classList.remove("bg-gray-200")
 
-    rBtn.classList.add("bg-gray-200");
-    rBtn.classList.remove("bg-green-700","text-white");
+    rBtn.classList.add("bg-gray-200")
+    rBtn.classList.remove("bg-green-700","text-white")
 
-    renderPackages();
+    renderPackages()
   }
 }
 
@@ -34,23 +34,23 @@ function switchMode(mode){
 /* RETAIL LOGIC */
 let cart = {};
 
-function updateQty(name, price, change){
-  cart[name] = cart[name] || {price, qty:0};
-  cart[name].qty += change;
-  if(cart[name].qty <= 0) delete cart[name];
-  renderCart();
-}
+// function updateQty(name, price, change){
+//   cart[name] = cart[name] || {price, qty:0};
+//   cart[name].qty += change;
+//   if(cart[name].qty <= 0) delete cart[name];
+//   renderCart();
+// }
 
-function renderCart(){
-  cartItems.innerHTML = "";
-  let total = 0;
-  Object.keys(cart).forEach(k=>{
-    const i = cart[k];
-    total += i.price * i.qty;
-    cartItems.innerHTML += `<li>${k} x ${i.qty} = ₹${i.price*i.qty}</li>`;
-  });
-  document.getElementById("total").innerText = total;
-}
+// function renderCart(){
+//   cartItems.innerHTML = "";
+//   let total = 0;
+//   Object.keys(cart).forEach(k=>{
+//     const i = cart[k];
+//     total += i.price * i.qty;
+//     cartItems.innerHTML += `<li>${k} x ${i.qty} = ₹${i.price*i.qty}</li>`;
+//   });
+//   document.getElementById("total").innerText = total;
+// }
 
 function placeRetailOrder(){
   localStorage.setItem("retailOrder", JSON.stringify(cart));
@@ -301,4 +301,60 @@ const monthlyPackages = [
 }
 function openCorporateForm(packageName){
   alert("Corporate enquiry for: " + packageName);
+}
+
+/* RETAIL LOGIC */
+
+
+function updateQty(name, price, change){
+  cart[name] = cart[name] || { price, qty: 0 };
+  cart[name].qty += change;
+
+  if(cart[name].qty <= 0){
+    delete cart[name];
+  }
+
+  renderCart();
+}
+
+function renderCart(){
+  const cartItemsEl = document.getElementById("cartItems");
+  const cartBar = document.getElementById("cartBar");
+
+  cartItemsEl.innerHTML = "";
+
+  let total = 0;
+  let count = 0;
+
+  Object.keys(cart).forEach(k=>{
+    const i = cart[k];
+    total += i.price * i.qty;
+    count += i.qty;
+
+    cartItemsEl.innerHTML += `
+      <li class="flex justify-between mb-2">
+        <span>${k} × ${i.qty}</span>
+        <span>₹${i.price * i.qty}</span>
+      </li>
+    `;
+  });
+
+  document.getElementById("total").innerText = total;
+  document.getElementById("cartTotal").innerText = total;
+  document.getElementById("cartCount").innerText = count;
+
+  // Show / hide cart bar
+  if(count > 0){
+    cartBar.classList.remove("hidden");
+  } else {
+    cartBar.classList.add("hidden");
+  }
+}
+
+function openCart(){
+  document.getElementById("cartDrawer").classList.remove("hidden");
+}
+
+function closeCart(){
+  document.getElementById("cartDrawer").classList.add("hidden");
 }
