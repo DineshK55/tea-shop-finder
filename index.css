@@ -330,6 +330,17 @@ body {
   box-shadow: 0 0 0 3px rgba(201,122,61,0.45);
 }
 
+.search-dropdown {
+  width: 100%;
+  max-width: 420px;
+  padding: 14px 18px;
+  font-size: 16px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+
 
 
 
@@ -381,6 +392,7 @@ body {
   color: #ffffff;
   opacity: 0.9;
 }
+
 
 
 

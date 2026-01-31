@@ -15,6 +15,7 @@ window.addEventListener("scroll", function () {
 });
 
 /* Quick search redirect */
-function quickSearch(text) {
-  window.location.href = "search.html?q=" + encodeURIComponent(text);
+function quickSearch(place) {
+  window.location.href = "search.html?q=" + encodeURIComponent(place);
 }
+
