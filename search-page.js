@@ -569,7 +569,7 @@ function showShopList(query) {
       box.innerHTML +=
         '<div class="shop-card">' +
           '<div class="card-top">' +
-            '<h3>' + shop.name + '</h3>' +
+            '<h3>' + shop.name.replace(/</g,"&lt;") + '</h3>' +
             '<span class="badge">Open Now</span>' +
           '</div>' +
           '<p class="card-location">📍 ' + shop.location + '</p>' +
@@ -588,7 +588,7 @@ function showShopList(query) {
   if (!found) {
     box.innerHTML =
       '<div class="empty-state">' +
-        '<h3>No tea shops found</h3>' +
+        '<h3>No tea shops found in ' + query.toUpperCase() + '</h3>' +
         '<button onclick="history.back()">← Go Back</button>' +
       '</div>';
   }
